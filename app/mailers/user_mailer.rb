@@ -3,7 +3,7 @@ class UserMailer < ApplicationMailer
     def send_email(application, job)
         @application = application
         @job = job
-        mail(to: @job['email'], subject: 'Prijava za posao')
+        mail(to: @job['email_poslodavca'], subject: 'Prijava za posao')
     end
 
     def send_email2(application, job)
