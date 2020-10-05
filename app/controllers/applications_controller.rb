@@ -1,11 +1,11 @@
 class ApplicationsController < ApplicationController
   before_action :set_application, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, only: [:index, :show, :edit, :update, :destroy]
 
   # GET /applications
   # GET /applications.json
   def index
-    @applications = Application.all
+    @applications = Job.find(params[:job_id]).applications
   end
 
   # GET /applications/1
@@ -15,8 +15,8 @@ class ApplicationsController < ApplicationController
 
   # GET /applications/new
   def new
-   
     @job = Job.find(params[:job_id])
+    @application = Application.new
   end
 
   # GET /applications/1/edit
@@ -26,11 +26,12 @@ class ApplicationsController < ApplicationController
   # POST /applications
   # POST /applications.json
   def create
-    @application = Application.new(application_params)
+    @job = Job.find(params[:job_id])
+    @application = @job.applications.create(application_params)
 
     respond_to do |format|
       if @application.save
-        format.html { redirect_to @application, notice: 'Application was successfully created.' }
+        format.html { redirect_to @job, notice: 'Application was successfully created.' }
         format.json { render :show, status: :created, location: @application }
       else
         format.html { render :new }

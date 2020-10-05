@@ -11,6 +11,7 @@
     <p class="card-text"><%= job.opis_oglasa %></p>
     <a href="<%= new_job_application_path(job) %>" class="btn btn-primary">Prijava</a>
     <%= link_to 'Edit', edit_job_path(job) %>
+    <%= link_to 'Vidi Prijave', job_applications_path(job) %>
     <%= link_to 'Destroy', job, method: :delete, data: { confirm: 'Are you sure?' } %>
   </div>
 </div>

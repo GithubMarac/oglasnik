@@ -33,10 +33,10 @@
 
   <div class="field">
     <%= form.label :istek_oglasa %>
-    <%= form.date_select :istek_oglasa %>
+    <%= form.date_select :istek_oglasa, start_year: Date.today.year %>
   </div>
 
-  <div class="field">
+  <div style="display: none" class="field">
     <%= form.label :istekao %>
     <%= form.check_box :istekao %>
   </div>

@@ -1,5 +1,15 @@
-<%= form_with(model: [ @job, @job.applications.build]) do |form| %>
+<%= form_with(model: [ @job, @job.applications.build], local: true) do |form| %>
+  <% if application.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(application.errors.count, "error") %> prohibited this application from being saved:</h2>
 
+      <ul>
+        <% application.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
 
   <div class="field">
     <%= form.label :ime %>
@@ -13,7 +23,7 @@
 
   <div class="field">
     <%= form.label :datum_rođenja %>
-    <%= form.date_select :datum_rođenja %>
+    <%= form.date_select :datum_rođenja, start_year: Date.today.year - 80, end_year: Date.today.year %>
   </div>
 
   <div class="field">
@@ -36,7 +46,7 @@
     <%= form.text_field :stručna_sprema %>
   </div>
 
-  <div class="field">
+  <div style="display:none;" class="field">
     <%= form.label :job_id %>
     <%= form.text_field :job_id %>
   </div>
