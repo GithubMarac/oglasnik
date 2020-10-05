@@ -31,6 +31,8 @@ class ApplicationsController < ApplicationController
 
     respond_to do |format|
       if @application.save
+        UserMailer.send_email(@application, @job).deliver_later
+        UserMailer.send_email2(@application, @job).deliver_later
         format.html { redirect_to @job, notice: 'Application was successfully created.' }
         format.json { render :show, status: :created, location: @application }
       else
