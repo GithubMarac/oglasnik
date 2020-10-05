@@ -30,6 +30,7 @@ gem 'bootsnap', '>= 1.4.2', require: false
 gem 'devise'
 gem 'email_validator', '~> 2.0', '>= 2.0.1'
 gem 'bootstrap', '~> 5.0.0.alpha1'
+gem 'faker'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

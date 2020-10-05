@@ -1,5 +1,5 @@
 class Job < ApplicationRecord
-    has_many :applications
+    has_many :applications, dependent: :destroy
 
         
     validates :naziv_oglasa, presence: true , length: { in: 8..25 }
