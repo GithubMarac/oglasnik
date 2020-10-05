@@ -2,36 +2,24 @@
 
 <h1>Jobs</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Naziv oglasa</th>
-      <th>Opis oglasa</th>
-      <th>Email poslodavca</th>
-      <th>Kategorija oglasa</th>
-      <th>Istek oglasa</th>
-      <th>Istekao</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<div class="container" style="display: flex; margin: 8px;">
+<% @jobs.each do |job| %>
+<div class="card" style="width: 18rem; margin: 10px;">
+  <div class="card-body">
+    <h5 class="card-title">
+    <%= job.naziv_oglasa %></h5>
+    <p class="card-text"><%= job.opis_oglasa %></p>
+    <a href="<%= new_job_application_path(job) %>" class="btn btn-primary">Prijava</a>
+    <%= link_to 'Edit', edit_job_path(job) %>
+    <%= link_to 'Destroy', job, method: :delete, data: { confirm: 'Are you sure?' } %>
+  </div>
+</div>
+<% end %>
+</div>
 
-  <tbody>
-    <% @jobs.each do |job| %>
-      <tr>
-        <td><%= job.naziv_oglasa %></td>
-        <td><%= job.opis_oglasa %></td>
-        <td><%= job.email_poslodavca %></td>
-        <td><%= job.kategorija_oglasa %></td>
-        <td><%= job.istek_oglasa %></td>
-        <td><%= job.istekao %></td>
-        <td><%= link_to 'Show', job %></td>
-        <td><%= link_to 'Edit', edit_job_path(job) %></td>
-        <td><%= link_to 'Destroy', job, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
 
-<br>
 
-<%= link_to 'New Job', new_job_path %>
+<%= link_to 'Dodaj Posao', new_job_path %>
+
+<%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+
