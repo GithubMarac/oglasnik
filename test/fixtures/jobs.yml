@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  naziv_oglasa: MyString
+  opis_oglasa: MyText
+  email_poslodavca: MyString
+  kategorija_oglasa: MyString
+  istek_oglasa: 2020-10-05
+  istekao: false
+
+two:
+  naziv_oglasa: MyString
+  opis_oglasa: MyText
+  email_poslodavca: MyString
+  kategorija_oglasa: MyString
+  istek_oglasa: 2020-10-05
+  istekao: false

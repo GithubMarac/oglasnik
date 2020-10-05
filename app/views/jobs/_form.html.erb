@@ -1,0 +1,47 @@
+<%= form_with(model: job, local: true) do |form| %>
+  <% if job.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(job.errors.count, "error") %> prohibited this job from being saved:</h2>
+
+      <ul>
+        <% job.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :naziv_oglasa %>
+    <%= form.text_field :naziv_oglasa %>
+  </div>
+
+  <div class="field">
+    <%= form.label :opis_oglasa %>
+    <%= form.text_area :opis_oglasa %>
+  </div>
+
+  <div class="field">
+    <%= form.label :email_poslodavca %>
+    <%= form.text_field :email_poslodavca %>
+  </div>
+
+  <div class="field">
+    <%= form.label :kategorija_oglasa %>
+    <%= form.text_field :kategorija_oglasa %>
+  </div>
+
+  <div class="field">
+    <%= form.label :istek_oglasa %>
+    <%= form.date_select :istek_oglasa %>
+  </div>
+
+  <div class="field">
+    <%= form.label :istekao %>
+    <%= form.check_box :istekao %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Ime:</strong>
+  <%= @application.ime %>
+</p>
+
+<p>
+  <strong>Prezime:</strong>
+  <%= @application.prezime %>
+</p>
+
+<p>
+  <strong>Datum rođenja:</strong>
+  <%= @application.datum_rođenja %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @application.email %>
+</p>
+
+<p>
+  <strong>Broj telefona:</strong>
+  <%= @application.broj_telefona %>
+</p>
+
+<p>
+  <strong>Adresa boravišta:</strong>
+  <%= @application.adresa_boravišta %>
+</p>
+
+<p>
+  <strong>Stručna sprema:</strong>
+  <%= @application.stručna_sprema %>
+</p>
+
+<p>
+  <strong>Job:</strong>
+  <%= @application.job_id %>
+</p>
+
+<%= link_to 'Edit', edit_application_path(@application) %> |
+<%= link_to 'Back', applications_path %>

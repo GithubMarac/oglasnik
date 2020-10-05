@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Naziv oglasa:</strong>
+  <%= @job.naziv_oglasa %>
+</p>
+
+<p>
+  <strong>Opis oglasa:</strong>
+  <%= @job.opis_oglasa %>
+</p>
+
+<p>
+  <strong>Email poslodavca:</strong>
+  <%= @job.email_poslodavca %>
+</p>
+
+<p>
+  <strong>Kategorija oglasa:</strong>
+  <%= @job.kategorija_oglasa %>
+</p>
+
+<p>
+  <strong>Istek oglasa:</strong>
+  <%= @job.istek_oglasa %>
+</p>
+
+<p>
+  <strong>Istekao:</strong>
+  <%= @job.istekao %>
+</p>
+
+<%= link_to 'Edit', edit_job_path(@job) %> |
+<%= link_to 'Back', jobs_path %>

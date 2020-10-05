@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Applications</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Ime</th>
+      <th>Prezime</th>
+      <th>Datum rođenja</th>
+      <th>Email</th>
+      <th>Broj telefona</th>
+      <th>Adresa boravišta</th>
+      <th>Stručna sprema</th>
+      <th>Job</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @applications.each do |application| %>
+      <tr>
+        <td><%= application.ime %></td>
+        <td><%= application.prezime %></td>
+        <td><%= application.datum_rođenja %></td>
+        <td><%= application.email %></td>
+        <td><%= application.broj_telefona %></td>
+        <td><%= application.adresa_boravišta %></td>
+        <td><%= application.stručna_sprema %></td>
+        <td><%= application.job_id %></td>
+
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Application', new_job_application_path %>
